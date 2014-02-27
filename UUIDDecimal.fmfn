@@ -1,0 +1,64 @@
+/**
+ * Converts the results of the Get(UUID) function into a Decimal for better indexing
+ *
+ *
+ * @author Todd Geist, todd@geistinteractive.com
+ * @created 10/19/2012
+ */
+
+
+
+Let(
+
+[
+
+h = "0123456789ABCDEF";
+
+ t =    Filter( Get(UUID); h);
+
+
+
+n =  
+
+( Position( h; Middle( t; 1; 1) ;1;1)-1) * ( 16 ^ 31 ) + 
+( Position( h; Middle( t; 2; 1) ;1;1)-1) * ( 16 ^ 30 ) + 
+( Position( h; Middle( t; 3; 1) ;1;1)-1) * ( 16 ^ 29 ) +
+( Position( h; Middle( t; 4; 1) ;1;1)-1) * ( 16 ^ 28 ) +
+( Position( h; Middle( t; 5; 1) ;1;1)-1) * ( 16 ^ 27 ) +
+( Position( h; Middle( t; 6; 1) ;1;1)-1) * ( 16 ^ 26 ) +
+( Position( h; Middle( t; 7; 1) ;1;1)-1) * ( 16 ^ 25 ) +
+( Position( h; Middle( t; 8; 1) ;1;1)-1) * ( 16 ^ 24 ) +
+( Position( h; Middle( t; 9; 1) ;1;1)-1) * ( 16 ^ 23 ) +
+( Position( h; Middle( t; 10; 1) ;1;1)-1) * ( 16 ^ 22 ) +
+( Position( h; Middle( t; 11; 1) ;1;1)-1) * ( 16 ^ 21 ) +
+( Position( h; Middle( t; 12; 1) ;1;1)-1) * ( 16 ^ 20 ) +
+( Position( h; Middle( t; 13; 1) ;1;1)-1) * ( 16 ^ 19 ) +
+( Position( h; Middle( t; 14; 1) ;1;1)-1) * ( 16 ^ 18 ) +
+( Position( h; Middle( t; 15; 1) ;1;1)-1) * ( 16 ^ 17 ) +
+( Position( h; Middle( t; 16; 1) ;1;1)-1) * ( 16 ^ 16 ) +
+( Position( h; Middle( t; 17; 1) ;1;1)-1) * ( 16 ^ 15 ) +
+( Position( h; Middle( t; 18; 1) ;1;1)-1) * ( 16 ^ 14 ) +
+( Position( h; Middle( t; 19; 1) ;1;1)-1) * ( 16 ^ 13 ) +
+( Position( h; Middle( t; 20; 1) ;1;1)-1) * ( 16 ^ 12 ) +
+( Position( h; Middle( t; 21; 1) ;1;1)-1) * ( 16 ^ 11 ) +
+( Position( h; Middle( t; 22; 1) ;1;1)-1) * ( 16 ^ 10 ) +
+( Position( h; Middle( t; 23; 1) ;1;1)-1) * ( 16 ^ 9 ) +
+( Position( h; Middle( t; 24; 1) ;1;1)-1) * ( 16 ^ 8 ) +
+( Position( h; Middle( t; 25; 1) ;1;1)-1) * ( 16 ^ 7 ) +
+( Position( h; Middle( t; 26; 1) ;1;1)-1) * ( 16 ^ 6 ) +
+( Position( h; Middle( t; 27; 1) ;1;1)-1) * ( 16 ^ 5 ) +
+( Position( h; Middle( t; 28; 1) ;1;1)-1) * ( 16 ^ 4 ) +
+( Position( h; Middle( t; 29; 1) ;1;1)-1) * ( 16 ^ 3 ) +
+( Position( h; Middle( t; 30; 1) ;1;1)-1) * ( 16 ^ 2 ) +
+( Position( h; Middle( t; 31; 1) ;1;1)-1) * ( 16 ^ 1 ) +
+( Position( h; Middle( t; 32; 1) ;1;1)-1)
+
+
+
+];
+
+n
+
+
+
+)
